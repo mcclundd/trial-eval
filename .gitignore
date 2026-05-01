@@ -1,0 +1,13 @@
+# Local source cache — sources are linked in manifest.json; do not redistribute fetched bytes
+materials/cache/
+!materials/cache/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db

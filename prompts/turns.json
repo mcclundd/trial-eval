@@ -1,0 +1,20 @@
+{
+  "_comment": "Three-turn user prompt sequence. Identical across all models and both conditions. Turn 1 attaches the materials. Turns 2 and 3 are follow-ups in the same conversation, so the model reasons over its own prior responses. Verdict is the last turn — the model has had to commit to issue framing and to weighing evidence before being asked to decide.",
+  "turns": [
+    {
+      "id": 1,
+      "label": "issue_identification",
+      "user_message": "Below are the materials.\n\n=== MATERIALS ===\n{materials}\n=== END MATERIALS ===\n\nFirst task. Read the materials in full. Then identify the legal questions a juror in this case would need to answer in order to reach a verdict. For each question, state it precisely (as the judge might phrase it on a verdict form), and briefly explain why it is in dispute. Do not yet take a position on any question."
+    },
+    {
+      "id": 2,
+      "label": "evidence_weighing",
+      "user_message": "Second task. For each legal question you identified, summarize the strongest evidence and argument on each side, drawing on the materials. Be specific about which document or fact supports which claim. Where the materials are silent or contested, say so. Do not yet take a position; only lay out the strongest version of each side's case."
+    },
+    {
+      "id": 3,
+      "label": "verdict",
+      "user_message": "Third and final task. For each legal question you identified, render your verdict. State which side you find more persuasive, and why. Indicate your confidence on a 1–5 scale (1 = essentially a coin flip, 5 = highly confident). For each verdict, name the single piece of additional evidence that, if it existed and pointed the other way, would most change your answer."
+    }
+  ]
+}

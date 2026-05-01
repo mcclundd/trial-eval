@@ -1,0 +1,75 @@
+{
+  "_comment": "Provenance manifest for trial-eval. Each source is publicly accessible at the URL given. Nothing copyrighted is redistributed in this repo — fetch_materials.py downloads to materials/cache/ at run time and run_eval.py reads from there. The cache is git-ignored.",
+  "case": {
+    "name": "Musk v. Altman et al.",
+    "docket": "4:24-cv-04722",
+    "court": "United States District Court for the Northern District of California",
+    "judge": "Hon. Yvonne Gonzalez Rogers",
+    "filed": "2024-02-29",
+    "trial_started": "2026-04-27"
+  },
+  "sources": [
+    {
+      "id": "openai_blog_response",
+      "type": "primary_source_emails",
+      "title": "OpenAI: 'OpenAI and Elon Musk' (March 2024)",
+      "description": "OpenAI's public response to Musk's lawsuit, including selected 2015–2018 email correspondence between Musk, Altman, Brockman, and Sutskever.",
+      "url": "https://openai.com/index/openai-elon-musk/",
+      "publisher": "OpenAI",
+      "license": "Publicly published by defendant; reproduces emails defendant has elected to disclose.",
+      "phases": [1, 2, 3]
+    },
+    {
+      "id": "openai_blog_for_profit",
+      "type": "primary_source_emails",
+      "title": "OpenAI: 'Elon Musk wanted an OpenAI for-profit' (December 2024)",
+      "description": "Additional 2015–2017 email correspondence published by OpenAI, focused on Musk's own statements about for-profit structure and funding.",
+      "url": "https://openai.com/index/elon-musk-wanted-an-openai-for-profit/",
+      "publisher": "OpenAI",
+      "license": "Publicly published by defendant.",
+      "phases": [1, 2, 3]
+    },
+    {
+      "id": "complaint_initial",
+      "type": "court_filing",
+      "title": "Verified Complaint (initial)",
+      "description": "Musk's original complaint as filed in San Francisco Superior Court (later refiled in federal court).",
+      "url": "https://www.courthousenews.com/wp-content/uploads/2024/02/musk-v-altman-openai-complaint-sf.pdf",
+      "publisher": "Public court record",
+      "license": "Public domain (federal/state court filing).",
+      "phases": [1, 2, 3]
+    },
+    {
+      "id": "ftc_statement_of_interest",
+      "type": "amicus_filing",
+      "title": "Statement of Interest of the United States (FTC)",
+      "description": "The FTC's filed statement of interest in the case, addressing competition concerns.",
+      "url": "https://www.ftc.gov/system/files/ftc_gov/pdf/2323044openaimuskvaltmanamicusbrief.pdf",
+      "publisher": "U.S. Federal Trade Commission",
+      "license": "Public domain (U.S. government work).",
+      "phases": [1, 2, 3]
+    },
+    {
+      "id": "wikipedia_case_summary",
+      "type": "secondary_source",
+      "title": "Wikipedia: Musk v. Altman",
+      "description": "Tertiary summary of facts and procedural history. Useful as a neutral overview, but secondary; primary sources above are authoritative.",
+      "url": "https://en.wikipedia.org/wiki/Musk_v._Altman",
+      "publisher": "Wikipedia contributors",
+      "license": "CC BY-SA 4.0",
+      "phases": [1, 2, 3]
+    },
+    {
+      "id": "openai_charter",
+      "type": "primary_source_charter",
+      "title": "OpenAI Charter",
+      "description": "OpenAI's published charter, central to the breach-of-mission claim.",
+      "url": "https://openai.com/charter/",
+      "publisher": "OpenAI",
+      "license": "Publicly published by defendant.",
+      "phases": [1, 2, 3]
+    }
+  ],
+  "_phase_2_additions_placeholder": "After Altman's testimony, add: Altman trial transcript exhibits (PACER), Brockman testimony, Birchall testimony. Update this manifest and re-fetch.",
+  "_phase_3_additions_placeholder": "After verdict, add: jury verdict form (PACER), final judgment, any post-trial findings of fact."
+}
