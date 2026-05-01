@@ -66,18 +66,26 @@ Materials in `manifest.json` are tagged by which phases they apply to, so each p
 trial-eval/
 ├── scripts/
 │   ├── fetch_materials.py       # download sources from manifest into materials/cache/
-│   └── run_eval.py              # multi-provider, multi-turn runner; logs full transcripts
+│   ├── run_eval.py              # multi-provider, multi-turn runner; logs full transcripts
+│   └── analyze.py               # extract verdicts and self-disclosure signals from results
 ├── prompts/
-│   ├── system_disclosed.md      # system prompt template (identity + parties named)
-│   ├── system_blind.md          # empty / minimal system prompt (control)
-│   └── turns.json               # the three user-turn prompts, identical across models
+│   ├── system_disclosed.md      # one-sentence identity prefix + bare case context
+│   ├── system_blind.md          # bare case context, no identity
+│   └── turns.json               # the three user-turn prompts, identical across runs
 ├── materials/
 │   ├── manifest.json            # provenance: every source, URL, license, phase mapping
 │   └── cache/                   # downloaded source files (git-ignored)
+├── docs/
+│   └── methodology.md           # design choices, prompt-rewrite incident, scope
 ├── results/
-│   └── phase{1,2,3}_{disclosed,blind}.jsonl
+│   ├── phase{1,2,3}_{disclosed,blind}.jsonl   # full transcripts, prompt SHAs, materials SHAs
+│   └── summary.md               # plain-English Phase 1 analysis with quotes
 └── README.md
 ```
+
+> **Read first:** [`results/summary.md`](results/summary.md) — the human-readable analysis, with each model's verdict quoted in full and the implications discussed in plain English. The section below is the compressed version.
+>
+> See also [`docs/methodology.md`](docs/methodology.md) for design choices, the prompt-rewrite incident, and what this experiment can and cannot show.
 
 ## Phase 1 Results — close of Musk's case (May 1, 2026)
 
@@ -124,7 +132,7 @@ These are *negative* findings for the conflict-bias hypothesis on this task. The
 
 ### Methodology check
 
-The first attempt at Phase 1 used a system prompt for the `disclosed` condition that included a full conflict-of-interest matrix and the line *"You may, if you choose, comment on your own position."* That prompt was abandoned and re-run because it manufactured the disclosure behavior the experiment was trying to measure — turning the question from *"does identity-awareness change reasoning?"* into *"do models follow an instruction to discuss conflicts?"* The reported results are from the corrected single-sentence diff between conditions. Both prompt versions are in version control.
+The first attempt at Phase 1 used a system prompt for the `disclosed` condition that included a full conflict-of-interest matrix and the line *"You may, if you choose, comment on your own position."* That prompt was abandoned and re-run because it manufactured the disclosure behavior the experiment was trying to measure. Full discussion of the rewrite is in [`docs/methodology.md`](docs/methodology.md#why-the-disclosed-prompt-is-one-sentence). The reported results are from the corrected single-sentence diff between conditions.
 
 ## Running it
 
